@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import { useCreateCategoryMutation,useFetchCategoriesQuery, useUpdateCategoryMutation, useDeleteCategoryMutation } from '../../redux/api/categoryApiSlice'
 import { toast } from 'react-toastify'
 import CategoryForm from '../../components/CategoryForm'
-import { createCategory } from '../../../../backend/controllers/categoryController'
 import Modal from '../../components/Modal'
 const CategoryList = () => {
     const {data: categories}=useFetchCategoriesQuery()
