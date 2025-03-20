@@ -5,7 +5,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { useLoginMutation } from '../../redux/api/userApiSlice'
 import { setCredentials } from '../../redux/features/auth/authSlice'
 import { toast } from 'react-toastify'
-import Loader from '../../utils/Loader'
+import Loader from '../../components/Loader'
 
 const Login = () => {
     const [email,setEmail] =useState('')
@@ -16,7 +16,8 @@ const Login = () => {
 
     const [login, {isLoading}] =useLoginMutation()
 
-    const {userInfo}=useSelector(state=>state.auth)
+    const {userInfo}=useSelector((state) => state.auth)
+    console.log(userInfo)
     const{search}= useLocation()
     const sp =new URLSearchParams(search);
     const redirect =sp.get("redirect") ||"/"
@@ -27,21 +28,38 @@ const Login = () => {
         }
     },[navigate,redirect,userInfo])
 
+    const submitHandler=async (e)=>{
+        e.preventDefault()
+        try{
+            const res= await login({email, password}).unwrap()
+            dispatch(setCredentials({...res}))
+            console.log( ...res)
+            navigate(redirect)
+            console.log("kwekwlewlek")
 
+        }
+        catch(error){
+            toast.error(error?.data?.message ||error.message)
+        }
+
+
+    }
+
+ 
   return (
     <div>
       <section className='pl-[10rem] flex flex-wrap'>
             <div className='mr-[4rem] mt-5rem]'>
                 <h1 className="text-2xl text-red-500 font-semibold mb-4">Sign In</h1>
                
-                <form action="" className='container w-[40rem] '>
+                <form onSubmit={submitHandler} className='container w-[40rem] '>
                     <div className="my-[2rem]">
-                        <label htmlFor="email" className='block text-sm font-medium text-white'>Email Address</label>
+                        <label htmlFor="email" className='block text-sm font-medium text-black'>Email Address</label>
 
-                        <input type="email" id='emial' value={email} onChange={(e)=>setEmail(e.target.value)} className='mt-1 p-2 border rounded w-full' />
+                        <input type="email" id='email' value={email} onChange={(e)=>setEmail(e.target.value)} className='mt-1 p-2 border rounded w-full' />
                     </div>
                     <div className="my-[2rem]">
-                        <label htmlFor="password" className='block text-sm font-medium text-white'>Password</label>
+                        <label htmlFor="password" className='block text-sm font-medium text-black'>Password</label>
 
                         <input type="password" id='password' value={password} onChange={(e)=>setPassword(e.target.value)} className='mt-1 p-2 border rounded w-full' />
                     </div>
@@ -52,7 +70,7 @@ const Login = () => {
                 <div className='mt-4'>
                     <p className='text-black'>
                         New Customer ?{" "}
-                        <Link to={redirect ? `/register?redirect=${redirect}`: '/register'} className='text-pink-500'>Register</Link>
+                        <Link to={redirect ? `/register?redirect=${redirect}`: '/register'} className='text-pink-500 hover:underline'>Register</Link>
                     </p>
                 </div>
             </div>
