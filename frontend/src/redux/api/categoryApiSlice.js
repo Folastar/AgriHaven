@@ -1,6 +1,6 @@
 import { apiSlice } from "./apiSlice";
 import { CATEGORY_URL } from "../constants";
-import { updateCategory } from "../../../../backend/controllers/categoryController";
+
 
 export const categoryApiSlice=apiSlice.injectEndpoints({
     endpoints:(builder)=>({

@@ -14,11 +14,11 @@ export default defineConfig({
     },
   },
 
-  build: {
-    rollupOptions: {
-      external: ['mongoose']
-    }
-  }
+  // build: {
+  //   rollupOptions: {
+  //     external: ['mongoose']
+  //   }
+  // }
 })
 
 
