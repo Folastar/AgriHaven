@@ -8,12 +8,21 @@ import userRoute from './routes/userRoute.js'
 import categoryRoute from './routes/categoryRoute.js'
 import productRoutes from './routes/productRoute.js'
 import uploadRoutes from './routes/uploadRoute.js'
-import orderRoutes from './routes/orderRoute.js'
+import orderRoutes from './routes/orderRoute.js';
+import cors from 'cors'
 dotenv.config()
 const PORT = process.env.PORT || 5000
 connectDB()
 
 const app =express()
+
+app.use(express.static("dist"))
+app.use(cors({
+    origin: [ "https://agrihaven.onrender.com"],
+    credentials: true,
+  }));
+
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
