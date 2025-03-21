@@ -6,13 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  server: {
-    proxy: {
-      "/api/": "https://agrihaven.onrender.com",
-      "/uploads/":"https://agrihaven.onrender.com"
+  // server: {
+  //   proxy: {
+  //     "/api/": "https://agrihaven.onrender.com",
+  //     "/uploads/":"https://agrihaven.onrender.com"
       
-    },
-  },
+  //   },
+  // },
 
   
 })
