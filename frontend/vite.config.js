@@ -8,17 +8,13 @@ export default defineConfig({
 
   server: {
     proxy: {
-      "/api/": "https://agrihaven.onrender.com/",
-      "/uploads/":"https://agrihaven.onrender.com/"
+      "/api/": "https://agrihaven.onrender.com",
+      "/uploads/":"https://agrihaven.onrender.com"
       
     },
   },
 
-  // build: {
-  //   rollupOptions: {
-  //     external: ['mongoose']
-  //   }
-  // }
+  
 })
 
 

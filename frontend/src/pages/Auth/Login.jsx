@@ -35,7 +35,7 @@ const Login = () => {
             dispatch(setCredentials({...res}))
             console.log( ...res)
             navigate(redirect)
-            console.log("kwekwlewlek")
+            
 
         }
         catch(error){

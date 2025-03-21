@@ -15,11 +15,14 @@ const PORT = process.env.PORT || 5000
 connectDB()
 
 const app =express()
+// const cors = require("cors");
+// app.use(express.static("dist"))
 
-app.use(express.static("dist"))
+
 app.use(cors({
-    origin: [ "https://agrihaven.onrender.com"],
-    credentials: true,
+    origin: ["http://localhost:5173", "https://agrihaven.onrender.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    credentials: true, // Allow cookies if needed
   }));
 
 
