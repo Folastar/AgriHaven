@@ -63,7 +63,7 @@ const Order = () => {
         refetch();
         toast.success("Order is paid");
       } catch (error) {
-        toast.error(error?.data?.message || error.message);
+        toast.error(error?.data?.message || error?.message);
       }
     });
   }
@@ -79,7 +79,7 @@ const Order = () => {
   }
 
   function onError(err) {
-    toast.error(err.message);
+    toast.error(err?.message);
   }
 
   const deliverHandler = async () => {
@@ -90,7 +90,7 @@ const Order = () => {
   return isLoading ? (
     <Loader />
   ) : error ? (
-    <Messsage variant="danger">{error.data.message}</Messsage>
+    <Messsage variant="danger">{error?.data?.message}</Messsage>
   ) : (
     <div className="container flex flex-col ml-[10rem] md:flex-row">
       <div className="md:w-2/3 pr-4">

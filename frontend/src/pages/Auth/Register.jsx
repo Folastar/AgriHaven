@@ -41,7 +41,7 @@ const Register = () => {
             toast.success("User Successfully registered")
         }
         catch(error){
-            toast.error(error.data.message)
+            toast.error(error?.data?.message)
         }
     }
   }

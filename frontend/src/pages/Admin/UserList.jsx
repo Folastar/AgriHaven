@@ -27,7 +27,7 @@ const UserList = () => {
           await deleteUser(id)
       }
       catch(error){
-        toast.error(error?.data.message || error.message)
+        toast.error(error?.data?.message || error?.message)
       }
     }
 
@@ -49,13 +49,13 @@ const UserList = () => {
         refetch()
     }
     catch(error){
-        toast.error(error.data.message || error.error)
+        toast.error(error?.data?.message || error?.error)
     }
 }
   return (
     <div className='p-4'>
       <h1 className='text-2xl font-semibold mb-4'>Users</h1>
-      {isLoading? (<Loader/>):error?(<Message variant="error"> {error?.data.message || error.message}</Message>): 
+      {isLoading? (<Loader/>):error?(<Message variant="error"> {error?.data?.message || error?.message}</Message>): 
       (<div className='flex flex-col md:flex-row'>
 
         <table className='w-full md:w-4/5 mx-auto'>

@@ -33,7 +33,7 @@ const Profile = () => {
 
             }
             catch(error){
-                toast.error(error?.data?.message || error.messsage)
+                toast.error(error?.data?.message || error?.messsage)
             }
         }
     }
