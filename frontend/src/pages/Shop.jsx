@@ -35,7 +35,7 @@ const Shop = () => {
     if (!checked.length || !radio.length) {
       if (!filteredProductsQuery.isLoading) {
         // Filter products based on both checked categories and price filter
-        const filteredProducts = filteredProductsQuery.data.filter(
+        const filteredProducts = filteredProductsQuery.data?.filter(
           (product) => {
             // Check if the product price includes the entered price filter value
             return (
@@ -60,7 +60,7 @@ const Shop = () => {
   const handleCheck = (value, id) => {
     const updatedChecked = value
       ? [...checked, id]
-      : checked.filter((c) => c !== id);
+      : checked?.filter((c) => c !== id);
     dispatch(setChecked(updatedChecked));
   };
 
