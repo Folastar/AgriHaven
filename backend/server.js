@@ -20,7 +20,7 @@ const app =express()
 
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://agri-haven-lbyj.vercel.app/"],
+    origin: ["http://localhost:5173", "https://agrihaven.vercel.app  http://localhost:4173"],
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     credentials: true, // Allow cookies if needed
   }));
