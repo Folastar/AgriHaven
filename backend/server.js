@@ -20,7 +20,7 @@ const app =express()
 
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://agrihaven.vercel.app  http://localhost:4173"],
+    origin: ["http://localhost:5173", "https://agrihaven.vercel.app" ],
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     credentials: true, // Allow cookies if needed
   }));
@@ -50,3 +50,8 @@ app.get("/api/config/paypal", (req,res)=>{
 const _dirname= path.resolve()
 app.use("/uploads",express.static(path.join(_dirname + "/uploads")))
 app.listen(PORT, ()=>console.log(`you're connected to port ${PORT}`))
+
+
+app.all("*", (rq,res)=>{
+    res.status(400).json({message:"Route not Found"})
+})
