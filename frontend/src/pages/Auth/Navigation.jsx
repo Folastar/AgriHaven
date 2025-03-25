@@ -48,8 +48,8 @@ const Navigation = () => {
     <div
       style={{ zIndex: 999 }}
       className={`${
-        showSidebar ? "hidden" : "flex"
-      }  xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-between p-4 text-white bg-black sm:w-[4%] w-[10%] sm:hover:w-[15%] h-[100vh] fixed`}
+        showSidebar ? "hidden" : "flex px-5"
+      }  xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-between p-4 text-white bg-black sm:w-[4%] hover:px-8  hover:w-[15%] h-[100vh]  fixed`}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">
@@ -96,10 +96,6 @@ const Navigation = () => {
           <FavoritesCount />
         </Link>
 
-        {/* <Link to="/" className="flex items-center transition-transform transform hover:translate-x-2">
-            <AiOutlineHome className="mr-2 mt-[3rem]" size={26}/>
-            <span className="hidden nav-item-name mt-[3rem]">Home</span>
-        </Link> */}
       </div>
       <div className="relative">
         <button

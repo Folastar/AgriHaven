@@ -83,7 +83,7 @@ const Shop = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col  md:flex-row">
           <div className="bg-[#151515] hidden sm:block p-3 mt-2 mb-2">
             <h2 className="text-center py-2 bg-black rounded-full mb-2">
               Filter by Categories
@@ -164,12 +164,12 @@ const Shop = () => {
 
           <div className="p-3">
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
-            <div className="flex flex-wrap">
+            <div className="flex mx-auto flex-wrap">
               {products.length === 0 ? (
                 <Loader />
               ) : (
                 products?.map((p) => (
-                  <div className="p-3" key={p._id}>
+                  <div className="p-3 mx-auto" key={p._id}>
                     <ProductCard p={p} />
                   </div>
                 ))
