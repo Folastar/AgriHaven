@@ -83,8 +83,8 @@ const Shop = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className="flex md:flex-row">
-          <div className="bg-[#151515] p-3 mt-2 mb-2">
+        <div className="flex flex-col md:flex-row">
+          <div className="bg-[#151515] hidden sm:block p-3 mt-2 mb-2">
             <h2 className="text-center py-2 bg-black rounded-full mb-2">
               Filter by Categories
             </h2>
@@ -139,7 +139,7 @@ const Shop = () => {
             </div>
 
             <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
-              Filer by Price
+              Filter by Price
             </h2>
 
             <div className="p-5 w-[15rem]">

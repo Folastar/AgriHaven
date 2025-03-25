@@ -43,7 +43,7 @@ const PlaceOrder = () => {
 
   return (
     <>
-      <ProgressSteps step1 step2 step3 />
+      <ProgressSteps className="px-[10%]" step1 step2 step3 />
 
       <div className="container mx-auto mt-8">
         {cart.cartItems.length === 0 ? (
@@ -89,7 +89,7 @@ const PlaceOrder = () => {
 
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-5">Order Summary</h2>
-          <div className="flex justify-between flex-wrap p-8 bg-[#181818]">
+          <div className="flex justify-between items-start sm:flex-wrap gap-10 sm:flex-row flex-col p-8 bg-[#181818]">
             <ul className="text-lg">
               <li>
                 <span className="font-semibold mb-4">Items:</span> $

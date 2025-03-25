@@ -7,12 +7,12 @@ const SmallProduct = ({product}) => {
       <div className="relative">
         <img src={product.image} alt={product.name} className='h-auto rounded' />
         <HeartIcon product={product}/>
-        <div className="p-54">
+        <div className="p-4">
             <Link to={`/product/${product._id}`}>
-                <h2 className='flex justify-between items-center'>
+                <h2 className='flex justify-between items-stretch'>
 
                     <div>{product.name}</div>
-                    <span className="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2 py-1 dark:bg-pink-900 dark:text-pink-300">
+                    <span className="bg-pink-100 rounded-xl text-pink-800 text-sm font-medium mr-2 px-3 py-0.5 dark:bg-pink-900 dark:text-pink-300">
                         ${product.price}
                     </span>
                 </h2>

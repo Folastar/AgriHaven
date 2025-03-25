@@ -29,7 +29,7 @@ const ProductTabs = ({
 
   return (
     <div className="flex flex-col md:flex-row">
-      <section className="mr-[5rem]">
+      <section className="mr-[5rem] flex flex-row">
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${
             activeTab === 1 ? "font-bold" : ""
@@ -143,7 +143,7 @@ const ProductTabs = ({
 
       <section>
         {activeTab === 3 && (
-          <section className="ml-[4rem] flex flex-wrap">
+          <section className="ml-[4rem] flex justify-center items-center flex-wrap">
             {!data ? (
               <Loader />
             ) : (

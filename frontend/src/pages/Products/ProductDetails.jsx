@@ -82,12 +82,12 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <>
-          <div className="flex flex-row w-[90rem] flex-wrap justify-between relative items-between mt-[2rem] ml-[10rem]">
+          <div className="flex flex-row sm:w-[100%]  w-[70%]  flex-wrap justify-center relative items-between mt-[2rem] ml-[5rem]">
             <div>
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-fit xl:w-[50rem] h-fit lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
+                className="w-fit xl:w-[40rem] h-fit lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
               />
 
               <HeartIcon product={product} />

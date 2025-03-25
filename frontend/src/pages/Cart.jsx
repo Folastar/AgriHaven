@@ -82,7 +82,7 @@ const Cart = () => {
                 </div>
               ))}
 
-              <div className="mt-8 w-[40rem]">
+              <div className="mt-8 max-w-[40rem]">
                 <div className="p-4 rounded-lg">
                   <h2 className="text-xl font-semibold mb-2">
                     Items ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
@@ -96,7 +96,7 @@ const Cart = () => {
                   </div>
 
                   <button
-                    className="bg-pink-500 mt-4 py-2 px-4 rounded-full text-lg w-full"
+                    className="bg-pink-500 mt-4 py-2 px-4 rounded-full text-lg w-fit sm:w-full"
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >
